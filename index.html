@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avijit Kapoor | Portfolio</title>
+  <meta name="description"
+    content="Avijit Kapoor – B.Tech CSE student at LPU. Python, AI/ML, Data Analysis. View projects, skills & certifications." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor-outer"></div>
+  <div id="cursor-inner"></div>
+
+  <!-- Interactive Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+      <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+      <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+      <li><a href="#experience" class="nav-link" data-section="experience">Training</a></li>
+      <li><a href="#certifications" class="nav-link" data-section="certifications">Certs</a></li>
+      <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+      <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle Day/Night">
+        <div class="toggle-track">
+          <span class="toggle-icon sun">☀️</span>
+          <span class="toggle-icon moon">🌙</span>
+          <div class="toggle-thumb"></div>
+        </div>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="#hero" onclick="closeMobile()">Home</a></li>
+      <li><a href="#about" onclick="closeMobile()">About</a></li>
+      <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+      <li><a href="#experience" onclick="closeMobile()">Training</a></li>
+      <li><a href="#certifications" onclick="closeMobile()">Certifications</a></li>
+      <li><a href="#education" onclick="closeMobile()">Education</a></li>
+      <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ══ HERO ══ -->
+    <section id="hero">
+      <div class="hero-content">
+        <div class="hero-badge magnetic">
+          <span class="pulse-dot"></span>
+          Available for Opportunities
+        </div>
+        <h1 class="hero-name">
+          <span class="name-line">Avijit</span>
+          <span class="name-line accent glitch" data-text="Kapoor">Kapoor</span>
+        </h1>
+        <p class="hero-subtitle">
+          <span class="prefix">&gt; </span>
+          <span class="typed-text" id="typed"></span>
+          <span class="cursor">█</span>
+        </p>
+        <p class="hero-desc">
+          B.Tech Computer Science &amp; Engineering student at <strong>Lovely Professional University</strong>.
+          Passionate about <strong>Data Science</strong>, <strong>AI</strong>, and building
+          real-world solutions that matter.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary magnetic" id="view-projects-btn">
+            <span>View Projects</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14m-7-7 7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline magnetic" id="contact-btn">
+            <span>Get In Touch</span>
+          </a>
+        </div>
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/avijit-kapoor53" target="_blank" class="social-link magnetic"
+            id="linkedin-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="https://github.com/AvijitKap" target="_blank" class="social-link magnetic" id="github-link"
+            aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+          </a>
+          <a href="mailto:avijitkapoor6230@gmail.com" class="social-link magnetic" id="email-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="avatar-ring">
+          <svg class="ring-svg" viewBox="0 0 300 300">
+            <circle class="ring-track" cx="150" cy="150" r="130" />
+            <circle class="ring-fill" cx="150" cy="150" r="130" />
+          </svg>
+          <div class="avatar-inner">
+            <span>AK</span>
+          </div>
+          <div class="orbit orbit-1">
+            <div class="orbit-dot"></div>
+          </div>
+          <div class="orbit orbit-2">
+            <div class="orbit-dot"></div>
+          </div>
+          <div class="orbit orbit-3">
+            <div class="orbit-dot"></div>
+          </div>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag" style="--i:0">🐍 Python</span>
+          <span class="tech-tag" style="--i:1">☕ Java</span>
+          <span class="tech-tag" style="--i:2">🤖 AI/ML</span>
+          <span class="tech-tag" style="--i:3">🗄️ SQL</span>
+          <span class="tech-tag" style="--i:4">🌶️ Flask</span>
+          <span class="tech-tag" style="--i:5">📊 Data Science</span>
+        </div>
+      </div>
+
+      <div class="scroll-hint">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ══ -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a passionate <strong>Computer Science &amp; Engineering</strong> student at Lovely Professional
+              University
+              with a CGPA of <strong>7.60</strong>. I love solving real-world problems through technology —
+              from data analysis pipelines to full-stack web applications.
+            </p>
+            <p>
+              Currently undergoing <strong>OCI Generative AI Professional Training</strong> at Oracle,
+              I'm building expertise in LLMs, vector databases, embeddings, and cloud-based AI solutions.
+              I believe in clean code, practical problem-solving, and continuous learning.
+            </p>
+            <div class="about-stats">
+              <div class="stat-item"><span class="stat-number" data-target="3">0</span><span
+                  class="stat-suffix">+</span><span class="stat-label">Projects</span></div>
+              <div class="stat-item"><span class="stat-number" data-target="3">0</span><span
+                  class="stat-suffix"></span><span class="stat-label">Certifications</span></div>
+              <div class="stat-item"><span class="stat-number" data-target="7.60" data-float="true">0</span><span
+                  class="stat-suffix"></span><span class="stat-label">CGPA</span></div>
+              <div class="stat-item"><span class="stat-number" data-target="2026">0</span><span
+                  class="stat-suffix"></span><span class="stat-label">Graduating</span></div>
+            </div>
+          </div>
+          <div class="about-info-cards">
+            <div class="info-card">
+              <div class="info-card-icon">📍</div>
+              <div>
+                <div class="info-card-label">Location</div>
+                <div class="info-card-value">Jalandhar, India</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">🎓</div>
+              <div>
+                <div class="info-card-label">University</div>
+                <div class="info-card-value">Lovely Professional University</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">💼</div>
+              <div>
+                <div class="info-card-label">Status</div>
+                <div class="info-card-value">Open to Internships</div>
+              </div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-icon">🤖</div>
+              <div>
+                <div class="info-card-label">Focus</div>
+                <div class="info-card-value">AI &amp; Data Science</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SKILLS ══ -->
+    <section id="skills" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">⚡</div>
+              <h3>Languages</h3>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span>C</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:80%"></div>
+                </div><span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-pill"><span>C++</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:75%"></div>
+                </div><span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-pill"><span>Java</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:80%"></div>
+                </div><span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-pill"><span>Python</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:90%"></div>
+                </div><span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-pill"><span>SQL</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:78%"></div>
+                </div><span class="skill-pct">78%</span>
+              </div>
+              <div class="skill-pill"><span>JavaScript</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:70%"></div>
+                </div><span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-pill"><span>HTML &amp; CSS</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:75%"></div>
+                </div><span class="skill-pct">75%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">🐍</div>
+              <h3>Python Tools</h3>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span>Pandas</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:88%"></div>
+                </div><span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-pill"><span>NumPy</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:85%"></div>
+                </div><span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-pill"><span>Scikit-learn</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:80%"></div>
+                </div><span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-pill"><span>Seaborn</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:82%"></div>
+                </div><span class="skill-pct">82%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">📊</div>
+              <h3>Visualization</h3>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span>Matplotlib</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:85%"></div>
+                </div><span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-pill"><span>Tableau</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:72%"></div>
+                </div><span class="skill-pct">72%</span>
+              </div>
+              <div class="skill-pill"><span>PowerBI</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:70%"></div>
+                </div><span class="skill-pct">70%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-cat-header">
+              <div class="skill-cat-icon">🛠️</div>
+              <h3>Tools</h3>
+            </div>
+            <div class="skill-pills">
+              <div class="skill-pill"><span>Git</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:85%"></div>
+                </div><span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-pill"><span>Jupyter Notebook</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:90%"></div>
+                </div><span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-pill"><span>VS Code</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:88%"></div>
+                </div><span class="skill-pct">88%</span>
+              </div>
+              <div class="skill-pill"><span>Automation Anywhere</span>
+                <div class="skill-bar">
+                  <div class="skill-fill" style="--w:70%"></div>
+                </div><span class="skill-pct">70%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ PROJECTS ══ -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <div class="projects-grid">
+          <div class="project-card tilt-card" id="project-consumer">
+            <div class="project-glow"></div>
+            <div class="project-year">2024</div>
+            <div class="project-icon">📊</div>
+            <h3 class="project-title">Consumer Complaints Data Analysis</h3>
+            <p class="project-desc">Performed exploratory data analysis on 2024 consumer complaint records using Pandas
+              and NumPy. Generated visualizations with Matplotlib and Seaborn to study complaint frequency, resolution
+              time, and company performance.</p>
+            <div class="project-tech-tags">
+              <span>Python</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span></div>
+            <a href="https://github.com/AvijitKap" target="_blank" class="project-link" id="proj-link-1">View on GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3" />
+              </svg></a>
+          </div>
+          <div class="project-card tilt-card featured" id="project-crossfile">
+            <div class="project-glow"></div>
+            <div class="project-badge">⭐ Latest</div>
+            <div class="project-year">2025</div>
+            <div class="project-icon">🔗</div>
+            <h3 class="project-title">Cross File Sharing Web App</h3>
+            <p class="project-desc">Built a Flask-based file-sharing system with password-based encryption/decryption
+              and a responsive frontend. Integrated automatic QR code generation for quick, secure cross-device file
+              access and sharing.</p>
+            <div class="project-tech-tags"><span>Python</span><span>Flask</span><span>QR
+                Code</span><span>Encryption</span><span>HTML/CSS</span></div>
+            <a href="https://github.com/AvijitKap" target="_blank" class="project-link" id="proj-link-2">View on GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3" />
+              </svg></a>
+          </div>
+          <div class="project-card tilt-card" id="project-pet">
+            <div class="project-glow"></div>
+            <div class="project-year">2025</div>
+            <div class="project-icon">🐾</div>
+            <h3 class="project-title">Pet Health Tracker System</h3>
+            <p class="project-desc">Developed a web-based system to log and track pet health data such as vaccinations,
+              diet, symptoms, and vet visits. Implemented clean UI with automated reminders and SQLite for organized
+              data storage.</p>
+            <div class="project-tech-tags">
+              <span>Python</span><span>SQLite</span><span>Flask</span><span>HTML/CSS</span><span>JS</span></div>
+            <a href="https://github.com/AvijitKap" target="_blank" class="project-link" id="proj-link-3">View on GitHub
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6m4-3h6v6m-11 5L21 3" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ TRAINING ══ -->
+    <section id="experience" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Training &amp; <span class="accent">Experience</span></h2>
+        <div class="timeline">
+          <div class="timeline-item" id="training-oracle">
+            <div class="timeline-dot">
+              <div class="timeline-dot-inner"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">OCI Generative AI Professional Training</h3>
+                  <p class="timeline-company">🏢 Oracle</p>
+                </div>
+                <span class="timeline-date">May 2025 – Jul 2025</span>
+              </div>
+              <ul class="timeline-points">
+                <li>Completed hands-on training covering OCI Generative AI services, embeddings, model deployment,
+                  prompt engineering, vector databases, and responsible AI practices.</li>
+                <li>Gained practical exposure through real-world labs involving LLM usage, chatbot development, and
+                  cloud-based AI solution design.</li>
+              </ul>
+              <div class="timeline-tags"><span>Generative AI</span><span>LLMs</span><span>Vector DB</span><span>Cloud
+                  AI</span><span>Oracle OCI</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CERTIFICATIONS ══ -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <h2 class="section-title">Certifi<span class="accent">cations</span></h2>
+        <div class="certs-grid">
+          <div class="cert-card" id="cert-privacy">
+            <div class="cert-shine"></div>
+            <div class="cert-icon">🔒</div>
+            <div class="cert-body">
+              <h3 class="cert-title">Privacy And Security</h3>
+              <p class="cert-issuer">NPTEL</p>
+              <span class="cert-date">Nov 2025</span>
+            </div>
+            <div class="cert-badge verified">✓ Verified</div>
+          </div>
+          <div class="cert-card" id="cert-automation">
+            <div class="cert-shine"></div>
+            <div class="cert-icon">🤖</div>
+            <div class="cert-body">
+              <h3 class="cert-title">Essentials Automation Certification</h3>
+              <p class="cert-issuer">Automation Anywhere</p>
+              <span class="cert-date">Feb 2025</span>
+            </div>
+            <div class="cert-badge verified">✓ Verified</div>
+          </div>
+          <div class="cert-card featured-cert" id="cert-oracle">
+            <div class="cert-shine"></div>
+            <div class="cert-icon">☁️</div>
+            <div class="cert-body">
+              <h3 class="cert-title">Oracle Cloud Infrastructure 2025 Certified Generative AI Professional</h3>
+              <p class="cert-issuer">Oracle</p>
+              <span class="cert-date">Sep 2025</span>
+            </div>
+            <div class="cert-badge verified">✓ Verified</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ EDUCATION ══ -->
+    <section id="education" class="section alt-bg">
+      <div class="container">
+        <h2 class="section-title">Edu<span class="accent">cation</span></h2>
+        <div class="edu-timeline">
+          <div class="edu-item" id="edu-lpu">
+            <div class="edu-year-badge">2023 – Present</div>
+            <div class="edu-card">
+              <div class="edu-degree-icon">🎓</div>
+              <div class="edu-details">
+                <h3>B.Tech in Computer Science &amp; Engineering</h3>
+                <p class="edu-institution">Lovely Professional University</p>
+                <p class="edu-location">📍 Jalandhar, India</p>
+                <div class="edu-cgpa">
+                  <span class="cgpa-label">CGPA</span>
+                  <span class="cgpa-value">7.60</span>
+                  <div class="cgpa-bar">
+                    <div class="cgpa-fill" style="--w:76%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="edu-item" id="edu-inter">
+            <div class="edu-year-badge">2023</div>
+            <div class="edu-card">
+              <div class="edu-degree-icon">📚</div>
+              <div class="edu-details">
+                <h3>Intermediate Education — C.B.S.E</h3>
+                <p class="edu-institution">Campus School</p>
+                <p class="edu-location">📍 Rudrapur, India</p>
+                <div class="edu-cgpa">
+                  <span class="cgpa-label">Score</span>
+                  <span class="cgpa-value">84%</span>
+                  <div class="cgpa-bar">
+                    <div class="cgpa-fill" style="--w:84%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="edu-item" id="edu-high">
+            <div class="edu-year-badge">2021</div>
+            <div class="edu-card">
+              <div class="edu-degree-icon">🏫</div>
+              <div class="edu-details">
+                <h3>High Secondary Education — C.B.S.E</h3>
+                <p class="edu-institution">Campus School</p>
+                <p class="edu-location">📍 Rudrapur, India</p>
+                <div class="edu-cgpa">
+                  <span class="cgpa-label">Score</span>
+                  <span class="cgpa-value">93.6%</span>
+                  <div class="cgpa-bar">
+                    <div class="cgpa-fill" style="--w:93.6%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <p class="contact-subtitle">I'm open to internship opportunities, collaborations, and interesting projects.
+          Let's connect!</p>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <a href="mailto:avijitkapoor6230@gmail.com" class="contact-item" id="contact-email">
+              <div class="contact-item-icon">✉️</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">avijitkapoor6230@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+919105412352" class="contact-item" id="contact-phone">
+              <div class="contact-item-icon">📱</div>
+              <div>
+                <div class="contact-item-label">Phone</div>
+                <div class="contact-item-value">+91 9105412352</div>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/avijit-kapoor53" target="_blank" class="contact-item"
+              id="contact-linkedin">
+              <div class="contact-item-icon">💼</div>
+              <div>
+                <div class="contact-item-label">LinkedIn</div>
+                <div class="contact-item-value">avijit-kapoor53</div>
+              </div>
+            </a>
+            <a href="https://github.com/AvijitKap" target="_blank" class="contact-item" id="contact-github">
+              <div class="contact-item-icon">💻</div>
+              <div>
+                <div class="contact-item-label">GitHub</div>
+                <div class="contact-item-value">AvijitKap</div>
+              </div>
+            </a>
+          </div>
+          <form class="contact-form" id="contact-form" onsubmit="handleForm(event)">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Let's collaborate on something amazing..."
+                required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width magnetic" id="submit-btn">
+              <span>Send Message</span> 🚀
+            </button>
+            <div class="form-success" id="form-success">✅ Message sent! I'll get back to you soon.</div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>Designed &amp; Built with ❤️ by <strong>Avijit Kapoor</strong></p>
+      <p class="footer-sub">B.Tech CSE • Lovely Professional University • 2026</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
